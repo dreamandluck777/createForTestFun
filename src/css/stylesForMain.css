@@ -1,0 +1,89 @@
+.mainWrapper {
+    background: repeating-linear-gradient(
+    -45deg,               
+    #1c1f2a,            
+    #1c1f2a 80px,        
+    #222633 80px,         
+    #222633 160px        
+  );
+    min-height: 100vh;
+    min-width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainWrapper .divFirstPage {
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1f2a;
+    color: #e0e0e0;
+    width: clamp(280px, 90vw, 1200px);
+    height: clamp(300px, 80vh, 1000px);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.mainWrapper .sectionFirstPage {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.mainWrapper div>button {
+  cursor: pointer;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    font-size: clamp(14px, 2vw, 20px);
+    padding: clamp(8px, 1vw, 16px) clamp(16px, 2vw, 32px);
+    border-radius: 10px;
+     position: relative;        
+  overflow: hidden;         
+  z-index: 0; 
+  transition: color 0.3s ease-in-out; 
+  border: none;                  
+}
+
+.mainWrapper div > button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform: scaleX(0);              
+  transform-origin: left;           
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;                              
+}
+
+
+@media (any-hover: hover) {
+  .mainWrapper div > button:hover::before {
+    transform: scaleX(1);
+  }
+
+  .mainWrapper div > button:hover {
+    color: white;
+  }
+}
+
+
+@media (any-hover: none) {
+  .mainWrapper div > button:active::before {
+    transform: scaleX(1);
+  }
+
+  .mainWrapper div > button:active {
+    color: white;
+  }
+}
+
+.mainWrapper section p {
+    width: clamp(280px, 60vw, 700px);
+}
